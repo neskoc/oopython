@@ -1,0 +1,50 @@
+{
+    "Accounts": [
+        {
+            "id": "1",
+            "type": "Account",
+            "balance": 9500.0,
+            "holders": ["and"]
+        },
+        {
+            "id": "2",
+            "type": "SavingsAccount",
+            "balance": 10495.0,
+            "holders": ["mar"]
+        },
+        {
+            "id": "3",
+            "type": "Account",
+            "balance": 10390.0,
+            "holders": []
+        },
+        {
+            "id": "4",
+            "type": "Account",
+            "balance": 100000.0,
+            "holders": ["and", "mar"]
+        },
+        {
+            "id": "5",
+            "type": "SavingsAccount",
+            "balance": 9594.0,
+            "holders": []
+        },
+        {
+            "id": "6",
+            "type": "SavingsAccount",
+            "balance": 200.0,
+            "holders": []
+        }
+    ],
+    "Customers": [
+        {
+            "id": "and",
+            "name": "Andreas"
+        },
+        {
+            "id": "mar",
+            "name": "Martin"
+        }
+    ]
+}

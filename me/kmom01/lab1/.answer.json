@@ -1,0 +1,36 @@
+{
+    "details": "Generated for necu20 at 2021-01-15 11:20:10.",
+    "key": "a7297a222e17443e8b08fe87536cc8a0",
+    "summary": {
+        "questions": 11,
+        "points": 13,
+        "pass": 10,
+        "passdistinct": 13
+    },
+    "points": {
+        "1.1": 1,
+        "1.2": 1,
+        "1.3": 1,
+        "1.4": 1,
+        "1.5": 1,
+        "1.6": 1,
+        "1.7": 1,
+        "1.8": 1,
+        "2.1": 1,
+        "2.2": 1,
+        "3.1": 3
+    },
+    "answers": {
+        "1.1": "My cats name is Denna and has brown eyes.",
+        "1.2": 3,
+        "1.3": "My cats name is Denna, has brown eyes and 3 lives left to live.",
+        "1.4": "Denna has 4 paws.",
+        "1.5": "Denna has 2 paws but cats have 4 paws.",
+        "1.6": "My cats name is Denna, has brown eyes and 3 lives left to live. My cats name is Nynaeve, has red eyes and -1 lives left to live.",
+        "1.7": "22-04-16",
+        "1.8": 79456,
+        "2.1": 203059,
+        "2.2": "41-38-43",
+        "3.1": true
+    }
+}

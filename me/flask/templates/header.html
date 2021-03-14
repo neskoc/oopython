@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1; maximum-scale=2.0;">
+
+    <title>Applikation i Flask</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Private stylesheet, loads last -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel='shortcut icon' href='static/img/iconfinder_python.png'/>
+</head>
+
+<body role="document">
+    <header class="site-header">
+        <img src="static/img/iconfinder_python.png" alt="logo" />
+        <span class="site-title">Me-Sida för Nenad Cuturic</span>
+        <span class="site-slogan">Non omne quod nitet aurum est.</span>
+    </header>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"   aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li {%- if request.path == "/" %} class="active" {% endif %}><a href="{{ url_for('main') }}">Hem</a></li>
+                    <li {%- if request.path == "/about" %} class="active" {% endif %}><a href="{{ url_for('about') }}">Om</a></li>
+                    <li {%- if request.path == "/redovisning" %} class="active" {% endif %}><a href="{{ url_for('redovisning') }}">Redovisning</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>

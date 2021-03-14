@@ -1,0 +1,17 @@
+{% include 'header.html' %}
+
+<main>
+    <article  class="all-browsers">
+        <header>
+            <h1>Om sida.</h1>
+            <p class="author">Updated <time datetime="2021-01-20 01:57:12">Den 20. januari 2021</time></p>
+        </header>
+        <p>På den här sidan beskrivs kort teknikerna som avänds inom kursen {{ course }}.</p>
+        <p>Huvudinnehålet är/borde vara objektorienterat python och just denna sida är byggt på mocroramverket <a href="https://flask.palletsprojects.com">flask</a>,
+         mallmotorn <a href="https://palletsprojects.com/p/jinja/">Jinja</a> samt CGI på Apache.</p>
+        <p>Övriga saker som tas upp på kursen är UML, datastrukturer och algoritmer.</p>
+    </article>
+</main>
+
+{% include 'byline.html' %}
+{% include 'footer.html' %}

@@ -1,0 +1,26 @@
+{% include 'header.html' %}
+
+<div class="container" role="main">
+    <div class="page-header">
+        <h1>Showing sorted words from trie</h1>
+    </div>
+
+    {% if message %}
+        <div class="alert alert-info" role="alert">
+            <div class="text-center">
+                {{ message }}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="content py-5">
+        <div class="row">
+            {% for word in words %}
+            {{ word }}<br>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+{% include 'footer.html' %}

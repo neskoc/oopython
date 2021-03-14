@@ -1,0 +1,397 @@
+{% include 'header.html' %}
+
+<main>
+    <article class="all-browsers">
+        <header>
+            <h1>Redovisningssida för {{ course }}</h1>
+        </header>
+        <section  class="kmom">
+            <h2>Kmom01</h2>
+            <p>
+                Jag brukar använda 3 olika datorer med 2 olika operativsystem (macos/linux) vilka synkas via Dropbox.
+                För kmom01 har jag hittills nästan uteslutande använt macos och där har jag inte upplevt några större problem med venv och flask.
+                Har planer på att konfigurera cgi, har redan gjort en del, men jag är inte klar än.
+                Har sedan ett par månader tillbaka velat byta ut xampp mot homebrew installation men inte orkat än.
+                Jag avvaktar med cgi tills jag är klar med migreringen.
+                Skall se om konfigurationen på linux kommer gå smidigare där jag har någorlunda enhetlig miljö.
+            </p>
+            <p>
+                Under alla mina år jag hållit på med IT har jag stött på objektorientering, klasser och objekt.
+                Så jag är rätt så bekat med det. Det är som är nytt är vad som är specifikt för python.
+            </p>
+            <p>
+                Människans hjärna har en begränsning hur många olika saker den kan hantera samtidigt.
+                Klasser används för att abstrahera världen dvs. klumpa ihop komplicerade logiskt sammanhängande delar så att programmerare kan enklare hantera dessa.
+                Klasser används som en sorts mallar vilka sedan används för att skapa olika objekt av.
+                Relationen är oftast 1-N dvs. en klass brukar ha flera objekt av samma klass.
+            </p>
+            <p>
+                Vad är skillnaden på instans- och statiska attribut/metoder?<br>
+                Det känns som att det blandas äpplen och päron i denna fråga men jag försöker svara så gott jag kan.
+                Klasser och objekt består av metoder (medlemsfunktioner) och attribut (medlemsvariabler).
+                <br>
+                Om en medlemsfunktion är oberoende av metoder och attribut inom den egna klassen eller egna objektet kallas den för statisk.
+                <br>
+                Ett attribut som hör till klassen och delas mellan samtliga objekt kallas för klassattribut.
+                Om attributet är specifikt för en instans (objekt av en klass) dvs. om den ändras från objekt till objekt kallas det för instansattribut.
+            </p>
+            <p>
+                Jag fick slå upp vad en programmeringsparadigm är så det ärliga svaret är att jag inte ens vet vad detta är för något.
+                Efter att jag slagit upp begreppet kan jag säga att jag känner till (att jag hållit på) procedurell, objektorienterad, händelsestyrd och strukturerad programmering.
+                Vad det gäller Bootstrap har jag hittills enbart hört och läst lite om men aldrig aktivt använt det.
+            </p>
+            <p>
+                I och med att jag redan hållit på det mesta var det inte så svårt att sparka igång.
+                Däremot tror jag att det känns överväldigande för de personer som aldrig hållit på med ooprogrammering för det introduceras en massa nya abstrakta saker på en gång.
+                Personligen tog det mig flera kurser och en ganska lång tid bara för att objektorientering skulle sätta sig.
+                Sedan tillkommer flask, jinja och cgi.
+                Nej, jag avundas verkligen inte nybörjarna.
+            </p>
+            <p>
+                Vad är det då nytt för mig och vad har jag lärt mig? Det är väl flask och jinja.
+                Nu när jag har gått igenom grunderna känns det rätt så logiskt och naturligt.
+                Att vi delvis gått igenom pico på design-kursen bidrar till att det blir lättar att arbeta med jinja.
+                Sedan fick jag damma av en del kring objektorientering samt lära mig svenska begrepp.
+            </p>
+        </section>
+        <section  class="kmom">
+            <h2>Kmom02</h2>
+            <p>
+                Jag börjar först med svårigheterna/problem:
+                <br>
+                När man kan en del inom ett visst område är det lätt att man får en övertro på den egna kunskapen.
+                Detta har jag upplevt i detta kmom för jag slarvade att noga läsa detaljer om klasser och objektorientering i python vilket gjorde att jag missade property-decorator.
+                Detta gjorde att jag slet väldigt mycket med min kod och att jag först gick in och ändrade i app.py samt mall-filerna.
+                När jag ställde frågan om detta och fick svaret om att jag nog inte använt property-decorator på ett korrekt sätt eller inte alls såg jag plötsligt ljuset :). Först var jag väldigt frustrerad för att jag trodde att det var något fel med koden och självklart inte med min kunskap (hur skulle jag ha fel).
+                <br>
+                I samband med det slet jag i flera timmar med att felsöka transfer-delen. Vad jag än gjorde fick jag märkligt fel, kombinerat med att min kernel-fastnade varannan eller var tredje gång jag skulle starta om samt problem med attribut spenderade jag det mesta av tiden på att
+                felsöka flask och jinja. Till slut insåg jag att vad jag än gjorde blev det samma resultat och då upptäckte jag att det från början fanns två identiska <b>components/dropdown.html</b> och att jag råkade arbeta med den som inte användes.
+            </p>
+            <p>
+                En betydande del av felsökningen spenderade jag också på "stavfel".
+                Klassdiagram med namnen är angivna som bild med en hel del obligatoriska namn vilka inte gick att kopiera utan man fick skriva av långa namn och för min del blev det självklart 3-4 stavfel vilket jag upptäckte först efter sammanlagt uppskattningsvis 2-3 timmar felsökning. Flask/jinja känns än så länge rätt så svåra att felsöka i synnerhet om man stavar fel är min erfarenhet.
+                <br>
+                Allt i allo gick cirka hälften av tiden åt på att felsöka problem som antingen var självförvållande alternativt inte ens borde ha funnits där.
+                <br>
+                Jag skrev en redovisning utifrån mina ursprungliga tankar som jag fick helt skriva om.
+            </p>
+            <p>
+                Jag kan nämna att jag även missuppfattade användning av ledande underscore i klasser och utanför där jag blandade ihop dessa. Så jag fick gå tillbaka och läsa på både om objektorientering i python samt användning av privata/skyddade objekt med hjälp av underscore.
+                <br>
+                Jag blev också förvirrad av krav 4: <b>Totalt skall det minst finnas tre konton av varje typ</b>.
+                Om man tittar på videon där hävdas det att den visar den färdiga lösningen. I den används enbart ett konto av varje typ.
+                <br>
+                Förresten jag upptäckte detta först då jag skrev redovisningstexten så jag behövde gå tillbaka och lägga till fler konton.
+            </p>
+            Nu till specifika kmom02-frågor som jag inte redan besvarat ovan:
+            <p>
+                Kan du ge exempel på något användningsområde där objektorientering och arv hade passat bra?
+                <br>Överallt där man behöver abstraktion av komplexa saker, att återanvända koden och exempelvis gruppera besläktade objekt.
+            </p>
+            <p>
+                Förstod du de olika relationerna och skillnaden på dem?
+                <br>Som jag nämnt tidigare har jag ganska solid bakgrund vad det gäller objektorientering. Därför upplevde jag inte något större problem att förstå det.
+            </p>
+            <p>
+                Vad innebär polymorfism inom objektorienterad programmering?
+                <br>Generellt innebär et att något kan vara av mer än en typ. I OO-sammangang är relaterat till metoder som kan operera med olika datatyper (ett specialfall: operator overloading).
+            </p>
+            <p>
+                Vad innebär inkapsling och publika interface inom objektorienterad programmering?
+                <br>
+                Inkapsling skärmar av variabler och medlemsfunktion från omvärlden samt bestämmer "scope". Hur dessa får nås från omvärlden utanför klassen definieras inne i klassen.
+                <br>
+                I det sammanhanget genom att göra attribut eller metoder publika får omvärlden under vissa förutsättningar tillgång till dessa.
+            </p>
+            <p>
+                Bank-uppgiften i sig är intressant men för mig är den mest värdefulla delen att jag fick en bättre förståelse av varför man använder sig av setter-metoder för privata variabler. Det hade inte suttit  riktig på plats innan och bank-uppgiften hjälpte till.
+            </p>
+        </section>
+        <section  class="kmom">
+            <h2>Kmom03</h2>
+            <p>
+                UML är inget nytt för mig och nu när jag har gått igenom bokhyllan har jag hittat en gammal UML-bok.
+                Så jag känner till den, har läst om den men aldrig använt det i arbetslivet så kunskapen var/är relativt ytlig.
+                <br>
+                Nu har jag fått damma av och läsa lite på. Nivån och förståelsen är bättre än när jag började med det för ca. 20 år sedan men kunskapen är ändå relativt låg för jag behöver slå upp hela tiden när man använder någon viss relation.
+            </p>
+            <p>
+                Av det skälet har jag också bestämt mig att göra ett UML-diagram även för bank2.
+                Den hittas under bank2 mappen.
+            </p>
+            <p>
+                Även enhetstester har jag stött på och läste om en del. På tal om gamla böcker hittade jag också en bok om enhetstester i C# som jag köpt för x-antal år sedan samt ytterligare en generell bok om test av IT-system.
+                En gång i tiden arbetade jag också som testutvecklare för Ericsson (3G basstationer) fast det var väääldigt låg nivå.
+            </p>
+            <p>
+                UML underlättar både planering och förbättrar kommunikation inom ett projekt.
+                Dessutom är det, för en kunnig person, mycket lättare att sätta sig i och förstå ett komplicerat program genom att titta på diagram (abstraktion) än att läsa koden hur duktig programmerar man än är.
+            </p>
+            <p>
+                Jag känner till teorin om nyttan med enhetstester sedan tidigare men under detta kursmoment fick jag även praktiskt erfara den nyttan. Under tiden jag skrev enhetstester för bank2 upptäckte jag att jag slarvat med bank-uppgiften från kmom02 där jag exempelvis räknade hur mycket man fick efter transaktion och inte själva transaktionsavgiften.
+                <br>
+                Att skriva tester är inte så roligt men om man har möjlighet att växla mellan test och utveckling genom till exempel par-/extremprogrammeringsteknik är det mycket roligare samtidigt som tester faktiskt tvingar en att bättre förstå sin/andras kod.
+                Så på tal om parprogrammering hade jag för 20 år sedan under ett par-tre månader varit del av den.
+            </p>
+            <p>
+                Som jag nämnt tidigare objektorienterad programmering är inget nytt för mig. Sedan upplever man inte någon större nytta i mindre projekt men det är en bra träning för större projekt i synnerhet i och med att den inte tar mycket mer tid jämfört med icke-objektorienterad programmering.
+                <br>
+                I och med att jag saknade/hade bristfällig OO-kunskap inom python hade jag lite svårigheter att följa en del andra kurser där python används och klasser är vardagsmat (maskinlärning och IoT) så jag förväntar mig att kunna dra en stor nytta av den nya kunskapen.
+            </p>
+            <p>
+                Själva kursmoment var rätt så arbetskrävande och dessutom fick man lära sig nya verktyg på köpet samt läsa på om flask/jinjna samt försöka tolka relativt luddig specifikation där man fick använda lite detektivarbete för att inte missa några detaljer (som vanligt upptäckte jag några missar i efter hand).
+            </p>
+        </section>
+        <section  class="kmom">
+            <h2>Kmom04</h2>
+            <p>
+                För många år sedan, rättare sagt  1996 (jag gick och kollade mina meriter hos antagning.se för att vara säker) läste jag en kurs i Datastrukturer och algoritmer och om jag nu minns rätt läste jag för första gången om datorstrukturer redan på gymnasiet någon gång i mitten på 80-talet.
+                <br>
+                Ja, på den tiden läste man fortfarande Cobol och programmerade med hjälp av hushållsmaskiner. Så svaret är ja, jag har skapat egna datastrukturer förut.
+            </p>
+            <p>
+                För första uppgiften (listan) valde jag enkel lista men man kan säga att jag valt en cirkulär för jag höll koll på både första och sista elementet.
+                Dessutom valde jag att spara det aktuella antal element. Att spara det antalet kan drastiskt öka hastighet samt underlätta för vissa operationer.
+                <br>
+                I den andra lösningen introducerade jag även debbellänkad struktur.
+                <br>
+                Anledningen för dubbellänkandet var för att göra det lite enklare för borttagning av element som inte finns på kanten.
+                Sedan kan man om man behöver förflytta sig både fram och tillbaka inom listan (konsekutivt borttagande av noder exempelvis).
+                <br>
+                Till slut tyckte jag det vore lite roligare att göra noder mer avancerade.
+            </p>
+            <p>
+                I fallet med kön hade jag bara en typ av undantag men för den länkade listan har jag implementerat två: ListIndexError och  ListValueError samt i fallet med remove metoden kastar jag uppåt ListIndexError om det härstammar från get_node-metoden.
+            </p>
+            <p>
+                <b>Hur gör man för att de ska kastas i listan?</b><br>
+                De används överallt där index skulle kunna vara fel: set, index_of, print_list för exempelvis ListIndexError samt set, delete och get_node då listan inte innehåller det aktuella värdet.
+            </p>
+            <p>
+                Jag har valt att göra samtliga extrauppgifter och i fallet med listan har jag använt dess metoder som en del av lösningen för de obligatoriska metoderna.
+            </p>
+            <p>
+                <b>Länkad lista kontra array?</b>
+                <br>
+                En vektor (array) lagrar sina element efter varandra (brukar vara så implementerat) medan en länkad lista brukar ha lösa element vilka länkas ihop till listan efter behov.
+                Så i fallet av en array kan man mycket snabbare komma åt innehållet i någon nod som inte är i början eller slut medan i fall av en länkad lista brukar man behöva starta från någon kant och ta sig igenom nod för nod tills man kommit fram.
+            </p>
+            <p>
+                Från början när jag tittade på kö-uppgiften tyckte jag att detta kursmoment kommer vara väldigt enkel och att jag skulle kunna snabbt ta mig igenom.
+                Sedan stötte jag på problem i debuggern (diskussion finns på discord) eller snarare att importera "queue" i en IDE (3 olika) för den ville inte ta min lokala Queue-klass utan den tog den från någon installerad modul.
+                <br>
+                Det tog mig en bra stund tills jag kom på vad det var för problem och hur jag skulle kunna lösa det (det "naturliga" skulle vara att lägga min modul i en undermapp och använda __init__ men det skulle inte fungera för de som skulle granska det). Efter en del men och om fick jag till slut arbeta med en kopia i en fil som heter myqueue.py som importeras i main.
+                Test tar däremot "originalet" dvs. queue.py.
+            </p>
+            <p>
+                Sedan när jag gick över till listan blev uppgiften mycket mer omfattande och min förvåning över att det skulle vara så enkelt förvandlades till: ok, så lätt kommer man undan (jag borde ha redan lärt mig detta).
+                <br>
+                Sedan när jag trodde att jag var klar under arbetet med test-klassen upptäckte jag att min lösning inte fungerade om man tog element från kanten och sedan lade ett annat igen.
+                Debuggern strulade igen fast på ett annat sätt så det tog mig ytterligare några timmar tills jag kom på vad som var för fel.
+                Under testutvecklingen upptäckte jag 3-4 andra saker som inte var riktigt enligt specifikationen (utan test skulle dessa kunna passera under radar) så jag fick rätta det också.
+                <br>
+                Allt i allo blev det igen ett lagom stort kmom.
+            </p>
+        </section>
+        <section  class="kmom">
+            <h2>Kmom05</h2>
+            <p>
+                Ytterligare ett kursmoment som jag från början bedömde skulle ta relativt kort tid men efter att jag började jobba med det drog det precis som vanligt på tiden. Att lösa extrauppgift 2 (att kunna sortera mixade värden) bidrog mest till tidsåtgången.
+                <br>
+                Jag fick göra om en del av den gamla koden samt fastnade i flera timmar med recursive insert där jag hade svårt att hitta felet för det ville inte riktigt fungera med mixade listor.
+                Generellt tyckte jag inte att rekursionen löser insert på ett smidigt sätt. Man fick anstränga sig att trycka i rekursionen i ett problem som känns mycket mer naturlig att lösa utan.
+            </p>
+            <p>
+                Så med andra ord valde jag att lösa samtliga extrauppgifter och dessutom använder min lösning metoder i Unorderedlist-klassen fast för att vara säker på att detta inte skulle godkännas finns även en variant med lösa funktioner i sort.py.
+                <br>
+                Själva Bubbelsort var betydligt lättare att implementera rekursivt än insert. Att jag löste sorteringsproblemet med blandade listor i insert först bidrog nog en hel del.
+            </p>
+            <p>
+                Jag har utökat min meny med ytterligare val för att kunna snabbt lägga i en testlista. Tyvärr kom jag på att göra så först efter att jag lagt massor med tid på manuella inmatningar.
+                <br>
+                Under tiden upptäckte jag även ett problem med "replace" metoden från kmom04 så fixade den också.
+            </p>
+            <p>
+                <b>Rekursion?</b> En teknik där en funktion anropar sig själv så att den bryter ner ett större problem i ett antal mindre problem. Mandelbrots kurvor var en gång i tiden ett av de mest kända exempel på användning av rekursioner.
+                <br>
+                <b>Förståelse av sorteringsalgoritmer?</b> Inga större problem. Jag fick damma av en del kunskaper men det var inte så svårt att komma igång igen.
+                <br>
+                <b>VisualAlg?</b> Det är en rolig applikation men jag har inte haft behov av att använda den.
+                <br>
+                <b>big-O?</b> Det är ett sätt att till exempel grovt beskriva hur snabb en algoritm är. Man kan också säga att den beskriver funktionell relation mellan antal iterationer och antal element som skall behandlas.
+                <br>
+            </p>
+        </section>
+        <section  class="kmom">
+            <h2>Kmom06</h2>
+            <p>
+                Binära sökträd (BST) är en undergrupp träd-datastrukturer där varje nod kan ha max 2 barn. Samtliga undernoder på den vänstra sidan är mindre än den aktuella noden och samtliga noder på den högra sidan är större än den aktuella noden.
+                <br>
+                BST brukar vara väldigt snabba då man behöver snabbt sortera elementen ~ O(log) dvs. passar väl till hierarkisk information.
+            </p>
+            <p>
+                Rekursiva funktioner är inget nytt för mig. Därför har jag inte upplevt det som särskilt svårt att klara av. Fast det känns fortfarande lite ovant.
+            </p>
+            <p>
+                I sammanhanget handlar det om hur man skall söka sig igenom trädet.
+                <br>
+                <b>Inorder:</b> Vänster -> Rot -> Höger<br>
+                <b>Preorder</b> Rot -> Vänster -> Höger<br>
+                <b>Postorder</b> Vänster -> Höger -> Rot<br>
+            </p>
+            <p>
+                <b>Hashtabell:</b> En datastruktur som snabbar upp uppslagning av komplexa datastrukturer. Nyckeln är ersatt med/räknas fram via en matematisk funktion (hash) till ett numeriskt värde (hash) som gör det i genomsnitt nästan lika snabbt att slå upp, lägga till eller ta bort ett värde som i en lista ~ O(1).
+            </p>
+            <p>
+                Förutom binära träd och hash har vi först titta på några s.k. elementära datastrukturer: kö, länkad lista och stack.
+                <br>
+                Kön tillämpar principen först in - först ut medan för stack är det först in - sist ut.
+                Länkad lista är en struktur där man dynamisk kan bygga upp/expandera listor men där noderna länkas ihop i stället för att ligga efter varandra som i en vanlig lista.
+                <br>
+                Stack och kö brukar finnas implementerade i mikroprocessorerna dvs. även på väldigt låg nivå och det finns även programmeringsspråk exempelvis forth som en gång i tiden var trendig. Det hade stack som en av huvudegenskaperna. Schema är väl ett annat språk med samma rötter.
+                <br>
+                Dessa elementära datastrukturer har sina speciella användningsområden men är inte kända för att vara snabba vid sortering eller uppslagning. Däremot de passar väl för sekventiellt data.
+            </p>
+            <p>
+                Från början såg kursmommentet ut att vara enkelt att lösa men sedan fastnade jag i delete-träsket och det tog mig en stund att komma ur. Nu i efterhand borde jag ha validerat mycket oftare för jag skulle ha sparat en hel del tid om jag hade gjort det. Jag upptäckte bl.a. en hel del == i stället för = vilket validator skulle ha hjälpt till med och sparat mig ett par timmar.
+                <br>
+                En del tid gick åt att manuellt mata in värden så jag borde ha mycket tidigare lagt till fler menyval med automatiserade inmatningar och borttagningar.
+                <br>
+                Till slut kan jag nämna att jag gjorde samtliga extrauppgift men dessa upplevde jag som väldigt lätta att lösa.
+            </p>
+        </section>
+        <section  class="kmom">
+            <h2>Kmom10</h2>
+            <p>
+            	Jag bestämde mig direkt från början att implementera samtliga krav och att använda dict för lagring av barnnoder.
+            </p>
+            <h3>Krav 1: Grunden</h3>
+            <p>
+            	Att skapa en trie-datastruktur var rätt så enkelt: hämta ord från filen och ta sig igenom länkade noder för att få allt på plats.
+            	<br>
+            	Jag kämpade mest med att hämta orden från strukturen: metoderna fand_all_words som anropar en rekursiv funktion get_words.
+            	Vad jag än gjorde kunde jag inte få rätsida på min utlist.
+            </p>
+            <p>
+            	Efter ett antal timmar i debuggern och en hel del iterationer min implementation kom jag till slut på vad som skall skickas med och vad som skall returneras vid rätt ställe i metoden. När jag kom på att ha en lokal word (lword) som skall skickas rekursivt samt att i slutet kontrollera om noden är startnod för att returnera slutlistan. Samma funktion återanvänds även för att generera suffix för punkt 2, därav startnod behöver inte vara root.
+            	<br>
+            	Efter det flöt resten på rättt så smidigt. Ursprungligen trodde jag att prefix och remove skulle ta mest tid.
+            	Även borttagning av noden fick mig att tänka till. Det lutade åt att jag inte skulle använda rekursion men efter några varv föll det på en lösning som kombinerar iterationer och rekursion.
+            	<br>
+            	Metoden sparar först samtliga noder i en lista bestående av dict={letter, node} bokstav för bokstav, hanterar den sista bokstaven i listan (det sker olika saker beroende av var noden befinner sig i trie strukturen), plockar bort sista elementet i listan och sedan anropar sig själv med den förkortade listan.
+            </p>
+            <h3>Krav 2: Klassdiagram</h3>
+            <p>
+            	Jag fuskade lite med diagrammet för jag kodade lite samtidigt som jag höll på klassdiagrammet.
+            	Det blev också 3-4 inlämningar inom ett par timmar för jag kom på olika saker som behövde ändras så fort jag började koda men till slut bestämde jag mig att låta blir och uppdatera det.
+            </p>
+            <p>
+            	Innan jag började med diagrammet kollade jag genomgångs- och föreläsningsvideorna en extra gång och försökte få alla rekommendationer.
+            	En del blev lyckade och en (mindre) del var inte så lyckade och vad jag minns var direkt vilseledande (dundermetoderna) i alla fall utifrån hur jag förstod användningen.
+            	<br>
+            	Hur som helst representerar klassdiagrammet i grova drag det slutliga resultat men med en hel del ändringar vad det gäller metoder: vad de skulle göra, vilka jag behövde och hur de skulle deklareras och hur dessa skulle användas i synnerhet i spelchecker-klassen.
+            	<br>
+            	Generellt är jag minst nöjd med hur detta krav föll ut.
+            </p>
+            <h3>Krav 3: Testning</h3>
+            <p>
+            	Innan jag började med mina tester kollade jag videon och exemplen för hur mocking fungerade och försökte tänka ut någon användning i mina tester.<br>
+            	Jag importerade det i början men till slut plockade bort allt för jag upplevde inte att hade behov av det och jag ville inte fall i fällan att börja anpassa koden till testmetoden och inte använda passande metod för tänkta tester.
+            </p>
+            <p>
+            	Jag använder 6 olika funktioner som enhetstester. Som testdata har jag skapat en fil med 13 ord som genererar trie där samtliga fall av ord förekommer: som en helt fristående gren utan förgreningar, ord som hamnar mitt i grenen och ett ord där en del av ordet delar noder med andra ord och slutet är en separat gren.
+            	<br>
+            	<b>test_generate_dict:</b> Testar att det genererade strukturens root-nod har bokstäver som motsvarar början av samtliga ord. Sedan traverserar koden genom länkade noder och kontrollerar att samtliga bokstäver finns på plats och att orden avslutas med stop=True
+            	<br>
+            	<b>test_searchmiss_exception:</b> Den metoden testar SearchMiss exception genom att försöka hitta nod som motsvarar ett ord som inte finns i listan samt "in" metoden som kollar om ord finns i trie-strukturen.
+            	<br>
+            	<b>test_search:</b> Den funktionen testar om tre ord som representerar de nämnda 3 fallen hittas i trie-strukturen.
+            	<br>
+            	<b>test_remove_word:</b> Den metoden testar att ta bort varje av de 3 orden ovan samt traverserar manuellt i länkade noder för att kontrollera att resultatet blev korrekt. Här testat även KeyError för den nod som inte skulle innehålla key som hör till den del av ordet var noder är borttagna.
+            	<br>
+            	<b>test_change_dict:</b> Här testas om ändring av ordlistan fungerar.
+            	<br>
+            	<b>test_merge_sort:</b> Här testas 4 olika fall: tom lista, lista med ett element, lista med 2 element och listan som genereras från samma testfil som används genomgående i denna testklass.
+            </p>
+            <h3>Krav 4: Sortera utskriften</h3>
+            <p>
+            	Jag utgick ifrån den c++ kod som användes för att demonstrera algoritmen i VisualAlgAlgo.
+            	Trots den givna koden tog det mig näst längst tid för att implementera algoritmen efter den redan beskrivna get_words-metoden.
+            	Det har avslöjat att rekursionen uppenbarligen fortfarande inte sitter så bra.
+            	<br>
+            	Fördelen är att jag verkligen fick förstå hur implementationen av merge-sort algoritmen fungerar.
+            </p>
+            <p>
+            	Jag fick sitta och debugga koden en hel del och kämpade med vad som skall skickas till den rekursiva funktionen och hur koden skall hanteras där. Jag hade gjort ett plus till ett minus när jag slarvigt skrev av koden vilket gjorde att medelpunkten blev fel och ursakade evighetsloopar.
+            	<br>
+            	När jag upptäckte och fixade det gick fixen av resten relativt fort.
+            </p>
+            <h3>Krav 5: Basera utskrift för menyval 2 på word frequency</h3>
+            <p>
+            	Den här punkten var lättas att implementera. I och med att jag fick ut listan med ord och frekvensen som en lista med dict-element var det väldigt enkellt att sortera på freq med sorted.
+            	<br>
+            	Under tiden jag höll på med enhetstester kom jag på att jag inte fick med frekvensen för ordet som matchar.
+            	Jag fixade det genom att kontrollera om startnoden för postfix hade stop=True och lade in den också i listan som skulle presenteras.
+            	Samtidigt upptäckte jag att frekvenserna var i stigande ordning så jag ändrade det till fallande.
+            	<br>
+            	Det är inte tydligt om prefix skall räknas med i de max 10 förslagen så jag lade till prefix som den elfte i fall det är ett ord.
+            </p>
+            <h3>Krav 6: Grafiskt gränssnitt på webben</h3>
+            <p>
+            	Den här punkten var också väldigt lätt att implementera. Jag fick lägga lite mer tid på sökformuläret men det var ändå förhållandevis kort tid.
+            	<br>
+            	Startsida är statisk och visar bara information om författaren (mig) och vilken kurs det gäller.
+            	<br>
+            	I headern lade jag 2 extra menyval förutom hemmet.
+            	<br>
+            	Under "Show all words" printade jag bara rakt ut hela ordlistan med radbrytningar.
+            	<br>
+            	I "Search word" använder jag request.method == "POST" för att fånga sökordet, slå upp det med hjälp av __contains__ i Trie (word in trie) och sedan renderar jag frekvensen och meddelandet för att visa resultat men också skicka in sökordet som dyker upp i input-rutan.
+            </p>
+            <p>
+            	Allt i allo var det minst tidskrävande i jämförelse med andra krav.
+            </p>
+            <h3>Allmänt om projektet</h3>
+            <p>
+            	Jag gillade projektet för att tiden för det mesta gick åt att tänka till och lösa problem. Dessutom fick man användning av det mesta vi gick igenom under kursens gång. Så det var en lämplig avslutning av kursen tycker jag.
+            </p>
+            <p>
+            	Det jag inte gillar var väldigt obalans mellan kraven och att förutom merge-sort är i princip krav 1 70% av projektet.
+            	Tröskeln är väldigt hög för att få godkänt men sedan är det platt till högsta betyget och ingen utmaning alls.
+            </p>
+            <p>
+            	I redovisningen ovan har jag redan beskrivit vad jag hade mest problem med och vart gick tiden åt.
+            	Sammanlagt har jag spenderat uppskattningsvis mellan 30 och 40 timmar borträknat förberedelserna dvs. några extra timmar för videogenomgångar och läsa på.
+            </p>
+            <p>
+            	Den tråkigaste delen är att lägga tid på redovisningen men jag förstår att det är nödvändigt ont.
+            </p>
+            <p>
+            	Personligen gillar jag sådana typer av projekt men jag kan tänka mig att en del studenter har fått kämpa med trie-implementationen.
+            </p>
+            <h3>Allmänt om kursen</h3>
+            <p>
+            	Jag gillade innehållet och vad vi gick igenom och nu börjar jag få lite grepp på decorators.
+            	<br>
+            	Även getter och setter var rätt så nytt för mig. Att även flask och jinja togs upp tycker jag om.
+            	<br>
+            	Rekursion? Ja, absolut. Under kursens gång var det mest utmanande och jag fick kämpa med en del här.
+            </p>
+            <p>
+            	Mindre bra?<br>
+            	Jag hade önskat om moduler togs upp. Även mer om flask och jinja.
+            	<br>
+            	Även algoritmdelen var ganska ytlig men det är en sådan kurs som täcker så brett område att det är svårt att fö djupet.
+            </p>
+            <p>
+            	Föreläsningarna och genomgångarna var rätt så bra, lite för låg tempo för min del (jag brukade spela upp i 1,25 till 1,5 hastighet).
+            </p>
+            <p>
+            	Tempot för rättelserna har varit lägre än jag önskat mig.<br>
+            	Hur som helst skulle jag ge kursen en 9.
+            </p>
+        </section>
+    </article>
+</main>
+
+{% include 'footer.html' %}
